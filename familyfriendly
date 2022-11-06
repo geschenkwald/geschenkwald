@@ -1,0 +1,1029 @@
+;------- This is the default configuration file for version 3.0-3.1 of Family Friendly Free-Roaming by R3QQ. --------
+;---------------------------------  FFFR is a GTA V modification for PC. --------------------------------------------
+;- This file should at all times be located in the GTAV game folder alongside the latest version of ScriptHookV.dll -
+;------ Make sure to read the description on the mod page, especially if you're keen on removing disturbance --------
+;
+;------------------------------------------- Customize FFFR ---------------------------------------------------------
+;With this configuration file you can customize the mod to your preferences. Settings normally activate features when
+;set to =1 (=0 means off). Instructions are otherwise given. For example, =-1 means off for some settings.
+;Activating a feature example: No flight music. Activate this feature by setting it to 1 (no_flight_music=1).
+;Some settings, when turned off, gets changed by the game. Some needs a game save reload to restore to default. 
+;Some needs to be called continuously (set to off) by the mod if the setting is set to off (0).  
+;
+;------------------------------------Settings are set/updated directly-----------------------------------------------
+;Settings can be changed during gameplay. After you save this file, or the file in use, changes are detected 
+;automatically by the mod. Settings are read and set into effect in game. No new game reset or game 
+;save load is normally required.
+;
+;-----------------Switch between configuration files with a menu (this feature is off by default)--------------------
+;If the folder FFFR is installed, custom configuration files can be placed in it and switched between while playing.
+;Make sure to have one called FamilyFriendlyFreeRoaming.ini in your main folder.
+;You can also change to a file in the FFFR folder by for example changing configuration_file_in_use like this:
+;configuration_file_in_use=./FFFR/FFFR Light Cops Chasing.ini 
+;This setting is located at the end of this file.
+;You can make a copy of a provided config, rename it and change the setting inside.
+;configuration_file_in_use is only used inside the main configuration file.
+;
+;Keyboard and controller settings are also unique for every configuration file.
+;The controller is inactivated in all configuration files by default and needs to be activated in every file
+;you want the controller to be available, along with button settings. The controller can also be 
+;activated/inactivated from the menu under MISC.
+;
+;----------------------Turning the mod off during gameplay (this feature is off by default)--------------------------
+;Note that it might take a while for all values to reset after inactivating the mod during gameplay.
+;You might have to teleport into a new area with new pedestrians and vehicles.
+;You may have to load a game save after turning the mod off. 
+;--------------------------------------------------------------------------------------------------------------------
+;
+;Mod page: https://www.gta5-mods.com/scripts/family-friendly-free-roaming
+;Support and feedback: https://discord.gg/g532sDT
+;Here you can share alternative configuration presets/customizations.
+;Support and feedback: https://discord.gg/g532sDT
+;Compare configuration files: https://www.diffchecker.com/diff
+;Remove comments in a configuration file: https://codebeautify.org/remove-lines-containing
+;
+;------------------------------- INDEX ---------------------------------------------------------------
+;
+; Keyboard
+; Controller
+; Menu
+; Player Settings
+; Pedestrian Settings
+; Both Settings
+; Radio
+; Native Scripts
+;
+;-----------------------------------------------------------------------------------------------------
+;
+[Key]
+;
+;------------------------HOW TO CHANGE KEYS-----------------------------------------------------------
+;Go to https://msdn.microsoft.com/en-us/library/windows/desktop/dd375731%28v=vs.85%29.aspx or
+;http://pastebin.com/CX2nZVLN and replace the number above with the one of your keys. 
+;
+;Keycodes starting with Ox just means hexadecimal. The decimal format works as well.
+;Exampel: 0x2E is the same as 46.
+;In order to change from "Delete" to "Insert" on the keyboard, change "46" to "0x2D"
+;-1 means not in use.
+;-----------------------------------------------------------------------------------------------------
+;
+;You can disable keys from activating features below by setting them to -1.
+;If you want to use two keys to activate features, then set for example change_to_closest_vehicle
+;to 17 (CTRL) and change_to_closest_vehicle_2 to 78 (N).
+;Usage of two keys: press key2 while holding key1 down.
+;
+key_1_switch_mod_state=-1
+;Key to activate/deactivate the mod and its features with. Use for example "Page Down" (34)
+;Leave this at -1 (as done by default) to inactivate this feature.
+;Reset while playing is currently not fully updated. Time is spent on other features.
+key_2_switch_mod_state=-1
+;Key2, used together with the first one. That means holding down key_1 and then press key_2.
+;Leave at -1 to inactivate use of this extra key.
+;Reset while playing is currently not updated. Time is spent on other features.
+;
+key_1_increase_engine_power=107
+;Default "+" (107). 
+;Increases the engine power when inside a vehicle.
+;When outside of vehicle, player's skin is replaced by a copy of the nearest ped or animal.
+key_2_increase_engine_power=-1
+;Key 2, used together with the first one. That means holding down key_1 and then press key_2.
+;Leave at -1 to inactivate use of this extra key.
+;
+key_1_decrease_engine_power=109
+;Default "-" (109). 
+;Decreases the engine power when inside a vehicle.
+;When outside of vehicle, switches clothes depending on closest ped.
+key_2_decrease_engine_power=-1
+;Key 2, used together with the first one. That means holding down key_1 and then press key_2.
+;Leave at -1 to inactivate use of this extra key.
+;
+key_1_unstuck=35
+;Default key "End" (35). Teleports your vehicle to the closest path/road. If already on a path/road, teleports 
+;to an asphalt road. If already on asphalt, teleports to asphalt close by. Huge planes teleports to the 
+;desert airport. If no player vehicle exists at all, it teleports the player.
+key_2_unstuck=-1
+;Key 2, used together with the first one. That means holding down key_1 and then press key_2.
+;Leave at -1 to inactivate use of this extra key.
+;
+key_1_change_to_closest_vehicle=78
+;Default "N" (78) Moves the player as a driver to the closest vehicle.
+key_2_change_to_closest_vehicle=-1
+;Key 2, used together with the first one. That means holding down key_1 and then press key_2.
+;Leave at -1 to inactivate use of this extra key.
+;
+key_1_change_as_passenger_to_closest_vehicle=66
+;Default key "B" (66) Moves the player as passenger to the closest vehicle. But only if it has a driver.
+;If already inside a vehicle, this instead switches between passenger seats available.
+key_2_change_as_passenger_to_closest_vehicle=-1
+;Key 2, used together with the first one. That means holding down key_1 and then press key_2.
+;Leave at -1 to inactivate use of this extra key.
+;
+key_1_teleport_player=17
+;Default CTRL (17). Teleports the player to a random location on the map.
+key_2_teleport_player=84
+;Default T (84)
+;Key 2, used together with the first one. That means holding down key_1 and then press key_2.
+;Leave at -1 to inactivate use of this extra key.
+;
+key_1_mod_player_vehicle=73
+;Default key I (85) Fixes the closest vehicle when outside, also gets random modification you're when inside.
+key_2_mod_player_vehicle=-1
+;Key 2, used together with the first one. That means holding down key_1 and then press key_2.
+;Leave at -1 to inactivate use of this extra key.
+;
+key_1_jump_with_vehicle=81
+;Default key Q (81)
+;Jump with for example Shift (16), while inside a vehicle. 
+;All wheels needs to touch the ground for it to jump. 
+;Some better than others. Boats and subs are not included, for now. 
+;Holding down the key while reversing gives the vehicle a force backwards. 
+;Affected by player's vehicle engine power and current speed. Default Q (81).
+key_2_jump_with_vehicle=-1
+;Key 2, used together with the first one. That means holding down key_1 and then press key_2.
+;Leave at -1 to inactivate use of this extra key.
+;
+;
+;			----- Menu use with keys -----
+;
+menu_toggle_switch=-1
+;-1 means off. Exampel for use: "Delete" (46)
+;Open/close the menu.
+menu_toggle_switch_2=-1
+;Used for requiring two keys pressed at once to open/close the menu. -1 means not in use.
+;
+menu_up=0x68
+;Default: Numeric keypad 8 key (0x68)
+;
+menu_down=0x62
+;Default: Numeric keypad 2 key (0x62) 
+;
+menu_left=0x64
+;Default: Numeric keypad 4 key (0x64)
+;
+menu_right=0x66
+;Default: Numeric keypad 6 key (0x66)
+;
+menu_select=0x65
+;Default: Numeric keypad 5 key (0x65)
+;
+menu_back=0x60
+;Default: Numeric keypad 0 key (0x60)
+;
+menu_back2=0x08
+;Default: BACKSPACE key (0x08)
+;
+;
+[Controller]
+;
+;------------------------HOW TO CHANGE BUTTONS-----------------------------------------------------------
+;To change a button, replace the number with one of these, A-18, B-45, X-22, Y-23, LB-37, 
+;RB-44, L2-10, R2-11, L3-28, R3-29, Select-0, Start-Unknown
+;D-Pad is Left-15, Right-74, Up-27, Down-19
+;Left-Stick is Left-34, Right-9, Up-32, Down-8
+;Right-Stick is Left-5, Right-1, Up-3, Down-2
+;Easier to read: http://pastebin.com/X6X2hUB7
+;--------------------------------------------------------------------------------------------------------
+;
+controller_activated=0
+;1 means that you can use the controller to trigger features described below by assigning buttons.
+;
+;You can a disable buttons from activating features below by setting them to -1.
+;To use, replace with a number corresponding to a button (check below).
+;If you want to use two buttons to activate features, then set for example change_to_closest_vehicle
+;to 44 (RB) and change_to_closest_vehicle_2 to 22 (X).
+;Note that activate_controller above needs to be set to 1 for this to work.
+;Usage of two buttons: press button2 while holding button1 down.
+;
+button_1_switch_mod_state=-1
+;Button to activate/deactivate the mod with.
+;Reset while playing is currently not updated. Time is spent on other features.
+button_2_switch_mod_state=-1
+;Button 2, used together with the first one. Leave at -1 to inactivate use of this extra button.
+;Reset while playing is currently not updated. Time is spent on other features.
+;
+button_1_increase_engine_power=-1
+;Increases the engine power when inside a vehicle.
+;When outside of vehicle, player's skin is replaced by a copy of the nearest ped or animal.
+button_2_increase_engine_power=-1
+;Button 2, used together with the first one. Leave at -1 to inactivate use of this extra button.
+;
+button_1_decrease_engine_power=-1
+;Decreases the engine power when inside a vehicle.
+;When outside of vehicle, switches clothes depending on closest ped.
+button_2_decrease_engine_power=-1
+;Button 2, used together with the first one. Leave at -1 to inactivate use of this extra button.
+;
+button_1_unstuck=-1
+;Teleports your vehicle to the closest path/road. If already on a path/road, teleports to an asphalt road. 
+;If already on asphalt, teleports to asphalt close by. Huge planes teleports to the desert airport. 
+;If no player vehicle exists at all, teleports the player. 
+button_2_unstuck=-1
+;Button 2, used together with the first one. Leave at -1 to inactivate use of this extra button.
+;
+button_1_change_to_closest_vehicle=-1
+;Example: D-pad down (19). Moves the player as a driver to the closest vehicle. 
+button_2_change_to_closest_vehicle=-1
+;Button 2, used together with the first one. Leave at -1 to inactivate use of this extra button.
+;
+button_1_change_as_passenger_to_closest_vehicle=-1
+;Example: D-pad right (74). Makes the player join as a passenger to the closest vehicle. But only if it has a driver.
+button_2_change_as_passenger_to_closest_vehicle=-1
+;Button 2, used together with the first one. Leave at -1 to inactivate use of this extra button.
+;
+button_1_mod_player_vehicle=-1
+;Not set/used by default. Fixes player's vehicle when outside, also randomly upgrades it when inside.
+button_2_mod_player_vehicle=-1
+;Button 2, used together with the first one. That means holding down button_1 and then press button_2.
+;Leave at -1 to inactivate use of this extra button.
+;
+button_1_jump_with_vehicle=18
+;Jump with default A (18), while inside a vehicle. Boats, subs and bicycles are not included, for now. 
+;Affected by player's vehicle engine power and current speed.
+button_2_jump_with_vehicle=-1
+;Button 2, used together with the first one. That means holding down button_1 and then press button_2.
+;Leave at -1 to inactivate use of this extra button.
+;
+button_1_teleport_player=-1
+;Teleports the player to a random location on the map.
+button_1_teleport_player=-1
+;Button 2, used together with the first one. That means holding down button_1 and then press button_2.
+;Leave at -1 to inactivate use of this extra button.
+;
+;
+;			----- Menu use with controller -----
+;		
+controller_menu_toggle_switch_1_of_2=44
+;Default RB (44)
+controller_menu_toggle_switch_2_of_2=74
+;Default D-Pad Right (74)
+;
+controller_menu_up=27
+;Default D-Pad Up (27).
+;
+controller_menu_down=19
+;Default D-Pad Down (19)
+;
+controller_menu_left=15
+;Default D-Pad Left (15)
+;
+controller_menu_right=74
+;Default D-Pad Right (74)
+;
+controller_menu_select=18
+;Default A (18)
+;
+controller_menu_back=45
+;Default B (45)
+
+[Menu]
+;
+game_input_disabled_while_menu_is_open=0
+;
+menu_size=3.8
+;Choose a size between 1 and 7. Decimal values works.
+;
+;
+menu_red=60
+menu_green=104
+menu_blue=166
+;Choose values between 0 and 255.
+;
+menu_transparent=180
+;Choose a value between 0 and 255.
+;
+;Below, 1 means on and 0 means off (if not stated otherwise).
+
+[Gameplay]
+;
+mod_activated=1
+;1 means that the mod is activated. 0 means deactivated. 
+;Changes to this setting while in game will be written/updated to this file.
+;
+;
+;--------------------------------------- Player Settings ---------------------------------------------
+;
+;			----- PLAYER WEAPONS -----
+;
+remove_all_player_weapons=2
+;0, 1 or 2. If 0, disable_all_firing_and_melee also need to be 0 in order for the 
+;player to be able to use weapons. By changing back to remove_all_player_weapons to 0 while playing, 
+;the player gets all weapons back. Also, the player gets his weapons back when deactivating the mod. 
+;1 means remove all, 2 means all but flash light, golf club, petrolcan and fire extinguisher are removed 
+;(so that golf can be played and also other mods requiring petrolcan or fire extinguisher). 
+;
+;
+;			----- PLAYER COMBAT -----
+;
+;1 and 0 means that the setting is kept at either true (1) or false (0).
+;The true state or the false state is then set by the mod.
+;Example: If player_vehicle_invincible is set to 0, the mod will make sure the player's vehicle is 
+;made not invincible. This can cause conflicts with for a example a trainer which wants to set the 
+;vehicle to invincible. To solve this, there's another option, -1.
+;-1 means that the mod won't do any changes in regards to the setting. Nothing will happen.
+;
+player_invincible=1
+;player_can_be_damaged set to 1 overwrites this setting.
+;
+player_can_be_damaged=0
+;No difference from the native invincible noticed.
+;
+;If invincible is set to 1 and can_be_damaged is set to 0, 
+;no real damage to player's health will be made. 
+;Note that all the proof settings below need to be set to -1 for them to be inactivated.
+player_bullet_proof=1
+player_fire_proof=1
+player_explosion_proof=1
+player_collision_proof=1
+player_melee_proof=1
+;
+;
+revive_player_immediately_if_killed=1
+;NOTE: This setting only matters if the player can die.
+;When set to 1, gameplay can continue when player's hp reaches 0. HP is reset when dying.
+;
+;
+everyone_ignore_player=0
+;
+;
+player_can_be_targetted=0
+;
+;
+player_can_be_hassled_by_gangs=0
+;
+;
+player_can_be_dragged_out=0
+;1 means that the player can be dragged out of the vehicle. 0 means can't. -10 means same as 0 and also
+;peds can't enter the driver's door of player's vehicle, to hinder them from driving away.  
+;
+;
+no_visual_jacking_by_player=1
+;If no_visual_jacking is set to 1, peds_like_you_and_wont_flee set to 0 and ped_can_be_dragged_out is 
+;set to 1, this setting removes the dragging out, smashing of windows etc. but you still get into the vehicle.
+;Has no effect when peds_like_you_and_wont_flee is set to 1. 
+;In that case ped_can_be_dragged_out set to 1 will give about the same outcome.
+;
+;
+player_can_attack_friendly=0
+;If 0, the player can't shoot if aiming at a friendly ped.
+;Also check out disable_all_firing_and_melee and can_be_targetted.
+;
+;
+disable_all_player_firing_and_melee=1
+;If 1, player can't attack with melee or shoot. Can still aim.
+;Also check out player_can_attack_friendly and can_be_targetted.
+;0 means not in use
+;
+;
+busted_and_wasted_screen=1
+;BETA feature.
+;0 means the first version of an alternative to normal respawn.
+;NOTE: This setting only matters if the player can die or can be chased by cops.
+;0 means that the normal busted/arrested or wasted/killed screen won't show. But you still get busted and wasted.
+;You will also respawn where you got arrested or died. 
+;Not a real respawn, peds and vehicles etc. are still there from before.
+;1 means no change.
+;
+;
+interrupt_missions=2
+;This is the first version of this feature.
+;Set to 1, the prologue mission is suppressed and the player teleported to the main city.
+;This is done to help avoid disturbence for those who haven't done all the steps during installation.
+;Set to 2, all missions with cutscenes will be interrupted.
+;Set to 3, no mission is safe from being interrupted, including some which might be family friendly.
+;Future work might solve nr. 3 into separating between story missions and others.
+;
+;
+;			----- POLICE REGARDING PLAYER -----
+;
+max_wanted_level=0
+;0-5. 5 meaning the highest level of wanted and chase.
+;Stops the police stop chasing you if set to 0. -1 means not in use.
+;
+;
+clear_area_of_cops=1
+;Removes most cops in the area.
+;0 means not used
+;
+;
+player_ignored_by_police=1
+;
+;
+dispatch_cops_for_player=0
+;If 0, no cops will be spawned to arrest you.
+;1 means dispatch. 2 means dispatch but no Swat Helicopter or Police Helicopter.
+;
+;
+create_random_cops=0
+;If on, the system sometimes spawn random cops.  
+;
+;
+player_traffic_rules=0
+;First version: Driving against traffic, driving on pavement and hitting vehicles 
+;increases the wanted level up to 2.
+;After 7 seconds of driving against traffic or 7 seconds after hitting a vehicle,
+;a wanted star will be given.
+;
+;
+;			----- PLAYER MOVEMENT -----
+;
+player_can_ragdoll=0 
+;Refers to  ragdoll physics. Animations when hitting something, stumbling etc. 
+;
+;
+teleport_player_when_out_of_bounds=1
+;When leaving the map at sea, the player is teleported back.
+;
+;
+;			----- PLAYER VEHICLE -----
+;
+;1 and 0 means that the setting is kept at either true (1) or false (0).
+;The true state or the false state is then set by the mod.
+;Example: If player_vehicle_invincible is set to 0, the mod will make sure the player's vehicle is 
+;not made invincible. This can cause conflicts with for a example a trainer which wants to set the 
+;vehicle to invincible. To solve this, there's another option, -1.
+;-1 means that the mod won't do any changes in regards to the setting. Nothing will happen.
+;
+player_vehicle_invincible=1
+;Makes the vehicle unable to explode.
+;
+;
+player_vehicle_can_be_damaged=0
+;Makes the vehicle able to take a lot of damage.
+;
+;
+;If invincible is set to 1 and can_be_damaged is set to 0, only deformation will occur if the proof values are set
+;to 1. That means no explosions.
+;Note that all the proof settings below need to be set to -1 for them to be inactivated.
+player_vehicle_bullet_proof=1
+player_vehicle_fire_proof=1
+player_vehicle_explosion_proof=1
+player_vehicle_collision_proof=1 
+player_vehicle_melee_proof=1
+;
+;
+;Vehicle Deformation Options. Only matter if vehicle_can_be_damaged=1
+player_vehicle_tyres_can_burst=0
+;vehicle_bulletProof needs to be 0 for vehicle_tyres_can_burst to matter.
+player_vehicle_strong=1
+;No crash damage
+player_vehicle_wheels_can_break=0
+player_vehicle_can_be_visibly_damaged=0
+;Visibly damaged means broken down and destroyed (not exploding from this setting). 
+;Allowed damaged types are also needed for visual damage. 
+;For example check player_vehicle_collision_proof set to 0 to allow collision damage.
+;Most vehicles can show visible damage. Some more than others but a few nearly not
+;at all. Cars are the best at showing visible damage.
+;
+;
+player_vehicle_engine_can_degrade=0
+;
+;
+player_vehicle_avoid_explosion=1
+;Only matters if the vehicle can be damaged.
+;
+;
+player_vehicle_water_handling=2
+;0 means no change.
+;1 means no damage when in water (although still marked as undrivable by the game).
+;2 means teleport to closest path/road for all vehicles (except dodo, if not upside down
+;because it can land on water). Also not huge planes, they will teleport to the desert airport.
+;
+;
+player_stick_to_vehicle=0
+;Player can't fall off or leave the vehicle, use a trainer to spawn into other ones or press N.
+;0 and -1 means not in use by the mod. 
+;
+;
+vehicles_unlocked_for_player=1
+;If set to 1, vehicles will always be unlocked when the player tries to enter.
+;
+;
+player_engine_power_multiplier=-1
+;Engine power multiplier. Negative values lowers the acceleration and max speed. Positive values increases. 
+;Changes made in game updates the value of this setting here.
+;-1 means not in use.
+;
+;
+player_vehicle_light_multiplier=1.3
+;-1 means this setting is not currently used. 0 means off. 1 means normal. 
+;Everything above 1 is more powerful than normal. Remember to set a value you like before setting back to -1.
+;Decimal point works here. There isn't really a upper limit. Game default is 1.
+;
+;
+player_max_vehicle_speed=-1
+;-1 means not currently used/off. Everything above will set the max speed in meter per second, 
+;for your vehicle. Remember to set a value you like as max speed before setting back to -1.
+;Other way to reset: Change vehicle after setting to -1 or press the modification/repair button
+;(default I).
+;
+;
+player_to_new_vehicle_as_driver=2
+;1 means only use nearby vehicles. 2 means spawn random car or motorbike
+;when there are no nearby vehicle. 3 means always spawn random. Everything else means same as 2.
+;
+;
+player_max_distance_to_new_vehicle=120
+;Used with change_to_new_vehicle_as_driver_mode
+;A new vehicle will only be looked for within the distance (in meters). 
+;
+;
+player_new_vehicle_max_height_over_ground=10000
+;Used with change_to_new_vehicle_as_driver_mode
+;If a vehicle, for example a helicopter or a plane is above this height it will be ignored.
+;
+;
+player_can_give_peds_lifts=1
+;Using the horn makes peds who wants, come to join you in your vehicle. 2 means only when using a bus or taxi. 
+;
+;
+funny_vehicle_visual_effects_and_sounds=0
+;0 means feature off. For every addition by 1 to this setting a new funny effect 
+;is activated when using the horn from 1 to 18 and to player's vehicle when outside. 
+;18 is max and means that all effects are on (triggered by using the horn). 
+;1: Closest ped driver responds more to your horn signal by using the horn too. 
+;2: Random new horn for peds and player's vehicles. 
+;3: Ped vehicles gets random colors. 
+;4: Same as 1 but longer signal. 
+;5: Particle effect behind peds vehicles. 
+;6: Particle effect, smaller version, behind player's vehicle. 
+;7: Same as 4 but much longer signal. 
+;8: Peds vehicles uses firework and flare. 
+;9: Player's vehicle uses firework and flare. 
+;10: Steeper firework and flare for peds vehicles. 
+;11: Firework more common and moves faster for the player. 
+;12: Same as 11 but even more and slightly more for ped vehicles. 
+;13: Player's vehicle only uses firework. 
+;14: Closest ped vehicle drives against traffic and tries to overtake. Drivers don't drive around vehicles.
+;15: Player vehicle gets random colors. 
+;16: Vehicles jump when honking the horn. Jumping distance is affected by your engine power.
+;17: Player's vehicle also jumps. A little less effects.
+;18: Even longer signal and effect on vehicles.
+;The effects described can be demanding and may lower your FPS when used heavily.
+;
+;
+player_vehicle_consequences_when_crashing_into=0
+;0 means no consequences. 1 means engine stops and needs to be "fixed" (hotwired). 
+;2 means more of the same as 1. With crashing means crashing into vehicles and peds.
+;
+;
+player_switch_vehicle_with_peds_upon_collision=0 
+;Switch vehicle with the peds inside the vehicles you hit.
+;1 means switch to driver place. 2 means same as 1 except if there's a passenger in your vehicle, you'll become a 
+;passenger in the new vehicle.
+;
+;
+no_player_vehicle_collisions_with_ped_vehicles=0
+;0 means no collision changes (normal collision). 1 means no player vehicle collision with 
+;other vehicles. 2 means no player vehicle collision with peds. 3 means both 1 and 2. Peds trailers disappears to 
+;prevent glitches. Some trailer glitches may still occur because all can't be removed entirely. 
+;Note that when switching back to 0, the player needs to move a bit since the current close by peds/vehicles are 
+;still affected. 
+;
+;
+player_can_fly_thru_windscreen=0
+;1 means that the player can fly through the windscreen if enough speed and hitting 
+;something when driving. 0 means the player will stay in the vehicle seat instead.
+;
+;
+;--------------------------------------- General Disturbance -------------------------------------------------
+;					 
+;
+stop_cutscenes=1
+;Cutscenes are connected to story missions and often played at the start of missions.
+;Not all scenes during missions are regarded as cutscenes. stop_cutscenes=1 sometimes
+;interfere with story missions. For example the prologue.
+;
+;
+no_certain_police_sounds=3 
+;1 means Wanted Music Disabled. 2 means Police Scanner Disabled. 3 means 1 and 2.
+;Setting these back to 0 requires a game save reload before the sound/music is back. 
+;-1 means not in use by the mod.
+;
+;
+no_flight_music=0 
+;1 means no special music when flying. When flying, special music is normally played instead
+;of the radio etc. Setting this back to 0 requires a game save reload before the music is back. 
+;2 means same as 1 but also starts the radio automatically when getting inside, like in cars. 
+;-1 means not in use by the mod.
+;
+;
+stop_audio_stream=1
+;Stops parts of the audio stream.
+;
+;
+stop_audio_scenes=0
+;Audio scenes are mostly used in missions (all kinds): pastebin.com/MtM9N9CC
+;
+;
+tv_and_cinema_disabled=1
+;1 means disabled. 0 and -1 means not in use by the mod
+;
+;
+can_switch_player=3
+;Mainly to prevent Trevor from being used and disturbing scenes during transition.
+;If set to 2 and key/button for character switch is pressed two times when not playing as Michael, 
+;you're turned into Michael. Backup of his clothes is created after game starts and loads.
+;If no backup is found when pressing the character switch, a set of default clothes are set.
+;The backup is not stored between game sessions.
+;Michael is the most family friendly character out of the three and that's why focus is on him.
+;3 means same as 2 and also that pressing two times while playing as Michael turns you into Franklin.
+;0 means no switch. 
+;1 means feature off, except when ped models are used since then that's the only way to switch.
+;-1 means no changes by the mod.
+;
+;
+player_can_use_phone=1
+;This setting now only matters if the app_ settings are on, which they are not by default.
+;Alternative way to prevent showing email, text messages, Internet and contacts when set to 0.
+;But this also disables the ability to take photos and save the game on foot.
+;
+;
+no_object_collisions=2
+;1 means that objects have no collision with other entities like peds and vehicles.
+;2 means same as 1 but only explosive objects affected.
+;0 means feature off.
+;-1 means not in use by the mod
+;
+;
+remove_disturbing_objects=1
+;1 means disturbing objects are removed. This list might be expanded in the future.
+;Right now it's objects like whiskey bottles, peyotes, cigs, bong, somewhat sexually 
+;disturbing, computers (because of internet access).
+;11 means same as 1 except objects are only set to be invisible instead.
+;2 is not recommended in most cases and might crash your game. 
+;It removes all objects in the world.
+;21 means same as 2 except objects are only set to be invisible instead.
+;21 is not recommended either.
+;0 means feature off.
+;
+;
+tattoo_shops_enabled=0
+;If set to 0, all tattoo shops are closed and locked and the interior lowered in 
+;quality (part of the game's exterior). 
+;Setting it back to 1 reloads the shop if you're close. 
+;You might have to restart your game to get back the others. 
+;
+;
+ammu_nations_enabled=0
+;Set to 0, Ammu-Nations are locked and their interiors disabled.
+;
+;
+no_smoking_or_drug_dealing_animations=3
+;1 means less smoking. 2 means no drug dealing. 3 means both 1 and 2. 
+;
+;
+;--------------------------------------- Pedestrian Settings ------------------------------------------------
+;
+;			----- PED WEAPONS -----
+;
+remove_all_ped_weapons=5
+;0 means no changes.
+;1 means removes all weapons from peds. 
+;2 means removes all illigal weapons from peds. 
+;3 means peds are given allowed weapon. Others are removed. 
+;4 means same as 3 except cops will also get snowballs and a stungun (unuseable by default).
+;5 means same as 4 except some peds will use flashlights(Note!: not perfectly) at night.
+;Just as a fun feature. Flashlights are given like weapons but it's not supported visually for peds. 
+;
+;
+;			----- PED COMBAT -----
+;
+;1 and 0 means that the setting is kept at either true (1) or false (0).
+;The true state or the false state is then set by the mod.
+;Example: If ped_invincible is set to 0, the mod will make sure that the ped is not  
+;made invincible. This can cause conflicts with for a example a trainer which wants to set the 
+;ped to invincible. To solve this, there's another option, -1.
+;-1 means that the mod won't do any changes in regards to the setting. Nothing will happen.
+;
+ped_invincible=1
+;ped_can_be_damaged set to 1 overwrites this setting. 
+;
+;
+ped_can_be_damaged=0
+;No difference between this native and ped_invincible has been noticed. 
+;
+;
+;If invincible is set to 1 and can_be_damaged is set to 0, 
+;no real damage to the ped's health will be made. 
+;Note that all the proof settings below need to be set to -1 for them to be inactivated.
+ped_bullet_proof=1
+ped_fire_proof=1
+ped_explosion_proof=1
+ped_collision_proof=1
+ped_melee_proof=1
+;
+;
+block_ped_melee_with_animation=1
+;Set to 1, it blocks melee attacks against the player.
+;It also prevents peds from entering locked vehicles.
+;2 means same as 1 but only cops/security are affected.
+;
+;
+ped_can_attack_friendly=0
+;If 0, the ped can't shoot if aiming at a friendly ped.
+;
+;
+ped_can_be_targetted=0
+;
+;
+peds_like_you_and_wont_flee=1
+;1 means all peds like you and won't flee. 
+;2 means all peds like you and won't flee except cops and security.
+;3 means only cops and security like you and won't flee. 
+;0 means off, normal state after loading in new peds.
+;-1 means not in use by the mod.
+;
+;
+;			----- PED MOVEMENT -----
+;
+ped_can_ragdoll=0
+;Ragdoll refers to https://en.wikipedia.org/wiki/Ragdoll_physics
+;
+;
+ped_can_be_dragged_out=0
+;Can get vehicle stolen*.
+;Also see no_visual_jacking under Player, (only needed when peds_like_you_and_wont_flee is set to 0).
+;
+;
+max_police_vehicle_speed=-1
+;-1 means not currently used/off. Everything above will set the max speed in meter per second, 
+;for police vehicles when peds are driving. 
+;Remember to set a value you like as max speed before setting back to -1.
+;
+;
+ped_max_distance_to_ground_to_use_parachute=250
+;Peds won't use their parachutes until they reach this altitude (in meters) or lower. 
+;Needs to be higher than 50. 
+;
+;
+;			----- PED VEHICLE -----
+;
+;1 and 0 means that the setting is kept at either true (1) or false (0).
+;The true state or the false state is then set by the mod.
+;Example: If ped_vehicle_invincible is set to 0, the mod will make sure the ped's vehicle is 
+;not made invincible. This can cause conflicts with for a example a trainer which wants to set the 
+;vehicle to invincible. To solve this, there's another option, -1.
+;-1 means that the mod won't do any changes in regards to the setting. Nothing will happen.
+;
+ped_vehicle_invincible=1
+;
+;
+ped_vehicle_can_be_damaged=0
+;
+;
+;If invincible is set to 1 and can_be_damaged is set to 0, only deformation will occur if the proof values are set
+;to 1. That means no explosions.
+;Note that all the proof settings below need to be set to -1 for them to be inactivated.
+ped_vehicle_bullet_proof=1
+ped_vehicle_fire_proof=1
+ped_vehicle_explosion_proof=1
+ped_vehicle_collision_proof=1
+ped_vehicle_melee_proof=1
+;
+;
+;Vehicle Deformation Options.
+ped_vehicle_tyres_can_burst=0
+;vehicle_bulletProof needs to be 0 for vehicle_tyres_can_burst to matter.
+ped_vehicle_strong=1
+;No crash damage
+ped_vehicle_wheels_can_break=0
+ped_vehicle_can_be_visibly_damaged=0
+;Visibly damaged means broken down and destroyed (not exploding from this setting).
+;Allowed damaged types are also needed for visual damage. 
+;For example check player_vehicle_collision_proof set to 0 to allow collision damage.
+;Most vehicles can show visible damage. Some more than others but a few nearly not
+;at all. Cars are the best at showing visible damage.
+;
+;
+ped_vehicle_engine_can_degrade=0
+;
+;
+ped_vehicle_avoid_explosion=1
+;Only matters if the vehicle can be damaged.
+;0 means feature off and no changes.
+;
+;
+ped_vehicle_water_handling=2
+;0 means no change (ped's vehicle takes damage from being in water).
+;1 means no damage when in water. Sometimes ped's can even drive on the seabed.
+;2 means teleport to closest path/road for all vehicles (except dodo, if not upside down
+;because it can land on water). Also not huge planes, they will teleport to the desert airport.
+;
+;
+ped_vehicles_disappear_underground=0 
+;Set to 1, all close vehicles with peds inside will go underground to prevent collision with you. 
+;Very high speeds may make it so the function isn't run in time before the collision. 
+;
+;
+;--------------------------------------- Both Settings ------------------------------------------------
+;
+;			----- BOTH MODEL/SKIN -----
+;
+; Allowed peds and models.
+; Allowed ped skins/models are set here.
+;
+; Removes disturbing peds and/or resets player's skin if altered 
+; to a disturbing one. If any of the sexually disturbing settings are set to be not allowed,
+; the stripclub is locked down and the interior removed. Same with Trevor's trailer.
+;
+; 0 means not allowed.
+; 1 means only allowed for peds in the world.
+; 2 means only allowed for the player.
+; 3 means allowed for both peds in the world and for the player.
+;
+sexually_disturbing_peds=0
+;Default 0
+;
+;Women in bikini and bathing suits. Requested setting.
+slightly_sexually_disturbing_female_peds=3
+;Default 3
+;
+;Topless men. Requested setting.
+slightly_sexually_disturbing_male_peds=3
+;Default 3
+;
+both_sexually_disturbing_and_violent_peds=0
+;Default 0. 
+;
+violently_disturbing_peds=0
+;Including blood/gore.
+;Default 0
+;
+slightly_disturbing_peds=0
+;Default 0. 3 required to play as Trevor.
+;
+;Smoking and disturbing backgrounds.
+costume_peds=2
+;Default 2
+story_peds=2
+;Not all. Wade, Tonya, Denise, Nervousron and Lamardavis
+;Default 2
+homeless_peds=3
+;Default 3
+;
+;
+;			----- BOTH MISC -----
+;
+can_do_drivebys=0
+;This is mainly to prevent the player and peds from taunting/ giving the middle finger when set to 0.
+;1 means no changes made by the mod.
+;
+clear_ped_blood_damage=1
+;0 means not in use
+;
+;
+special_vehicles=2
+;Very rare spawn of vehicles in traffic and added modifications to existing for variety.
+;0 means feature off.
+;1 means a low chance for a random modification to a random vehicle. 
+;2 means same as 1 but in also a very low chance for a rare vehicle spawn in traffic.
+;
+;
+;			----- PLAYER SOUNDS -----
+;
+player_pain_sounds=0
+;-1 means not in use by the mod
+;
+player_speech_sounds=0
+;0 means no speech sounds.
+;1 means no change, player speech is activated.
+;
+player_noise_multiplier=0
+;-1 means not in use by the mod
+;
+;			----- PEDESTRIAN SOUNDS -----
+;
+ped_pain_sounds=0
+;0 means no pain sounds
+;-1 and 1 means feature not in use by the mod
+;
+ped_speech_sounds=-40
+;0 means no ambient speech. -10 means same as 0 and stop ped speech. 
+;-20 means same as 0 and stop scripted conversations (like over radio in taxis and soapboxer preachers). 
+;-30 means same as 0, -10 and -20. -40 means same as -30 except scripted 
+;conversations are allowed when inside a taxi. 
+;-1 and 1 means not in use by the mod 
+;
+;
+;--------------------------------------- Radio ----------------------------------------------------------
+;
+;1 for allowed, to make the stations playable in game. 
+;0 for skip channel.
+;-1 means no change.
+RADIO_01_CLASS_ROCK=1 ; Los Santos Rock Radio
+RADIO_02_POP=1 ; Non-Stop-Pop FM 
+RADIO_03_HIPHOP_NEW=0 ; Radio Los Santos
+RADIO_04_PUNK=0 ; Channel X
+RADIO_05_TALK_01=0 ; West Coast Talk Radio
+RADIO_06_COUNTRY=0 ; Rebel Radio
+RADIO_07_DANCE_01=1 ; Soulwax FM
+RADIO_08_MEXICAN=0 ; East Los FM
+RADIO_09_HIPHOP_OLD=0 ; West Coast Classics
+RADIO_11_TALK_02=0 ; Blaine County Radio ;---- not available in game.
+RADIO_12_REGGAE=0 ; Blue Ark
+RADIO_13_JAZZ=0 ; Worldwide FM (Not only Jazz, Hip-hop too etc.)
+RADIO_14_DANCE_02=0 ; FlyLo FM
+RADIO_15_MOTOWN=0 ; The Lowdown 91.1
+RADIO_20_THELAB=0 ; The Lab
+RADIO_16_SILVERLAKE=0 ; Radio Mirror Park
+RADIO_17_FUNK=0 ; Space 103.2
+RADIO_18_90S_ROCK=0 ; Vinewood Boulevard Radio
+RADIO_21_DLC_XM17=0 ; Blonded Los Santos 97.8 FM
+RADIO_22_DLC_BATTLE_MIX1_RADIO=0 ; Los Santos Underground Radio
+RADIO_23_DLC_XM19_RADIO=0 ; iFruit Radio
+RADIO_19_USER=1 ; Self Radio (Play your own music in game)
+OFF=1 ; Not used directly
+RADIO_OFF=1 ; Not used directly
+;
+;Channels not available by default: https://pastebin.com/Kj9t38KF
+;You can set these to player_vehicle_permanent_radio_channel and initial_home_radio_station
+;
+radio_on=0
+;radio_on 0 means always off.
+;-1 means that radio settings will not be in use by the mod.
+;
+player_vehicle_permanent_radio_channel=-1
+;Set a channel, for example RADIO_19_USER
+;It will be played in player's vehicle instead or other settings. 
+;This setting is inactivated by setting it to -1 or 0.
+;
+initial_home_radio_station=RADIO_19_USER
+;Choose between radio stations above and change "RADIO_19_USER" to something you want to listen to.
+;"OFF" for off. -1 means not in use.
+;
+make_initial_home_radio_station_permanent=1
+;If set to 1, house radios will keep the radio station set above
+;and not change when player's vehicle changes radio station.
+;Also if set to 1, the home radio channel can be changed by changing initial_home_radio_station
+;-1 means not in use
+;
+use_radio_in_dlc_homes=1
+;Beta. If set to 1, attempts will be made to play above set channel
+;from emitters added in game updates, if any are loaded by another mod.
+;
+alter_disturbing_emitters=1
+;Beta. 0 means no change. 1 means attempts to shut down disturbing sound emitters. 
+;2 means same as 1 but then also tries to play the radio from the sound emitters.
+;
+;
+peds_radio_same_as_players=1
+;If set to 1, allowed radio stations above also applies to peds vehicles.
+;
+;
+;--------------------------------------- Native Scripts -------------------------------------------------
+;
+;Allowed scripts. 1 means allowed. 0 means terminate and keep it off. A game save needs to be reloaded after 
+;changing some of these before effect happens.  
+;
+app_internet_native_script=0
+;Disables the webbrowser when set to 0. 1 means allowed.
+;
+app_textmessage_native_script=0
+;Cellphone cell phone app is allowed when 1 and turned off when 0.
+;
+app_contacts_native_script=0
+;Contacts cell phone app is allowed when 1 and turned off when 0.
+;
+blip_controller_native_script=1
+;If 0, all blips from scripts on the map are removed.
+;
+bong_smoking_native_script=0
+;Terminates the bong and drinking games.
+;Not nessesary if there are no objects.
+;
+event_carsteal_native_script=0
+;Events are started randomly by the game. This event makes a ped steal a car.
+;
+disturbing_player_scenes_native_script=0
+;Disturbing player scenes are sometimes started by the game.
+;
+random_disturbing_events_native_script=0
+;Random disturbing events are started randomly by the game.
+;
+;
+;-------------------------------------- Dev and testing -------------------------------------------------
+;
+;Scanners showing their hash and distance to them.
+;Write down the hash and send as feedback if having issue with an object for example.
+;0 means feature off. 1 means feature on.
+ped_scanner=0
+;Note that all NPCs in game, including animals, are considered peds by the game.
+vehicle_scanner=0
+object_scanner=0
+pickup_scanner=0
+show_number_of_entities_on_screen=0
+write_log=3
+;1 means both logs. 2 means only event/normal log.
+;3 means only error log. Recommended for normal use.
+;1 and 2 should only be used for testing/troubleshooting.
+;0 means no logs are created. 
+delete_old_logs_on_startup=1
+;Reason to delete is mainly to prevent huge files.
+;
+;
+;-------------------------------------- Configuration file ----------------------------------------------
+;
+FFFR_config_version=3.1
+use_outdated_ini_files=0
+;Not recommended. 0 means do not allow. 1 means allow.
+configuration_file_in_use=./FamilyFriendlyFreeRoaming.ini
